@@ -100,39 +100,109 @@
                 </form>
             </div>
         </div>
+    </div>
+
+    <!-- User Dashboard (initially hidden) -->
+    <div class="dashboard-container" style="display: none;">
+        <div class="sidebar">
+            <div class="sidebar-header">
+                <i class='bx bxs-trash'></i>
+                <span>Waste Management</span>
+            </div>
+            <ul class="sidebar-menu">
+                <li class="active" data-section="home"><i class='bx bx-home'></i> Home</li>
+                <li data-section="schedule"><i class='bx bx-calendar'></i> Waste Schedule</li>
+                <li data-section="disposal"><i class='bx bx-trash'></i> Request Disposal</li>
+                <li data-section="payment"><i class='bx bx-credit-card'></i> Payment</li>
+                <li data-section="route"><i class='bx bx-map'></i> Change Route</li>
+            </ul>
         </div>
 
-        <!-- Footer Section -->
-<footer class="footer">
-    <div class="footer-content">
-        <div class="footer-section about">
-            <h3><i class='bx bxs-trash'></i> Waste Management System</h3>
-            <p>Working towards a cleaner environment and sustainable waste management practices in Nepal.</p>
-            <div class="contact">
-                <span><i class='bx bxs-phone'></i> +977 9803056246</span>
-                <span><i class='bx bxs-envelope'></i> info@wastenepal.com</span>
+        <div class="main-content">
+            <div class="top-bar">
+                <div class="profile">
+                    <img src="https://via.placeholder.com/40" alt="Profile" class="profile-img">
+                    <span class="profile-name">User Name</span>
+                    <i class='bx bx-chevron-down'></i>
+                </div>
             </div>
-            <div class="socials">
-                <a href="#"><i class='bx bxl-facebook'></i></a>
-                <a href="#"><i class='bx bxl-twitter'></i></a>
-                <a href="#"><i class='bx bxl-instagram'></i></a>
-                <a href="#"><i class='bx bxl-linkedin'></i></a>
+
+            <div class="content-section" id="home-section">
+                <h2>Welcome to Your Dashboard</h2>
+                <p>Here you can manage your waste collection services.</p>
+                <!-- Home content goes here -->
+            </div>
+
+            <div class="content-section" id="schedule-section" style="display: none;">
+                <h2>Waste Collection Schedule</h2>
+                <!-- Schedule content goes here -->
+                <div class="schedule-grid" id="schedule-grid">
+                    <!-- Schedule cards will be inserted here -->
+                  </div>   
+            </div>
+
+            <div class="content-section" id="disposal-section" style="display: none;">
+                <h2>Request Waste Disposal</h2>
+                <!-- Disposal request form goes here -->
+            </div>
+
+            <div class="content-section" id="payment-section" style="display: none;">
+                <h2>Payment History</h2>
+                <!-- Payment content goes here -->
+            </div>
+
+            <div class="content-section" id="route-section" style="display: none;">
+                <h2>Change Collection Route</h2>
+                <!-- Route change form goes here -->
             </div>
         </div>
-        <div class="footer-section contact-form">
-            <h3>Contact Us</h3>
-            <form action="#">
-                <input type="email" placeholder="Enter your email" required>
-                <textarea placeholder="Your message"></textarea>
-                <button type="submit" class="btn-send">Send</button>
-            </form>
-        </div>
     </div>
-    <div class="footer-bottom">
-        <p>&copy; 2025 Waste Management System | All rights reserved</p>
-    </div>
-</footer>
+
     
+    <!-- test for dashboard page  -->
+     <!-- remove this code later  -->
+    <button id="test-dashboard">Test Dashboard</button>
+
+    <script>
+    document.getElementById('test-dashboard').addEventListener('click', function() {
+        document.querySelector('.container').style.display = 'none';
+        document.querySelector('.dashboard-container').style.display = 'flex';
+        document.querySelector('.header').style.display = 'none';
+        document.querySelector('.footer').style.display = 'none';
+    });
+    </script>
+
+    <!-- Footer Section -->
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-section about">
+                <h3><i class='bx bxs-trash'></i> Waste Management System</h3>
+                <p>Working towards a cleaner environment and sustainable waste management practices in Nepal.</p>
+                <div class="contact">
+                    <span><i class='bx bxs-phone'></i> +977 01-4567890</span>
+                    <span><i class='bx bxs-envelope'></i> info@wastenepal.com</span>
+                </div>
+                <div class="socials">
+                    <a href="#"><i class='bx bxl-facebook'></i></a>
+                    <a href="#"><i class='bx bxl-twitter'></i></a>
+                    <a href="#"><i class='bx bxl-instagram'></i></a>
+                    <a href="#"><i class='bx bxl-linkedin'></i></a>
+                </div>
+            </div>
+            <div class="footer-section contact-form">
+                <h3>Contact Us</h3>
+                <form action="#">
+                    <input type="email" placeholder="Enter your email" required>
+                    <textarea placeholder="Your message"></textarea>
+                    <button type="submit" class="btn-send">Send</button>
+                </form>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2025 Waste Management System | All rights reserved</p>
+        </div>
+    </footer>
+
     <script src="index.js"></script>
 </body>
 </html>

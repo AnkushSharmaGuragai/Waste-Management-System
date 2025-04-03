@@ -139,4 +139,89 @@ buttons.login.addEventListener("click", async (event) => {
         document.querySelector(".form-box.otp").style.display = formType === "otp" ? "block" : "none";
         document.querySelector(".form-box.forgot-password").style.display = formType === "forgot-password" ? "block" : "none";
     }
+
+
+    
 });
+
+// After successful login (modify your login button event)
+document.querySelector('.btn').addEventListener('click', function(event) {
+    event.preventDefault();
+    // In a real app, you would validate credentials first
+    document.querySelector('.container').style.display = 'none';
+    document.querySelector('.dashboard-container').style.display = 'flex';
+    
+    // Hide the header and footer when dashboard is shown
+    document.querySelector('.header').style.display = 'none';
+    document.querySelector('.footer').style.display = 'none';
+});
+
+// Dashboard navigation
+const menuItems = document.querySelectorAll('.sidebar-menu li');
+const contentSections = document.querySelectorAll('.content-section');
+
+menuItems.forEach(item => {
+    item.addEventListener('click', function() {
+        // Remove active class from all items
+        menuItems.forEach(i => i.classList.remove('active'));
+        // Add active class to clicked item
+        this.classList.add('active');
+
+        // Hide all content sections
+        contentSections.forEach(section => {
+            section.style.display = 'none';
+        });
+
+        // Show the selected section
+        const sectionId = this.getAttribute('data-section') + '-section';
+        document.getElementById(sectionId).style.display = 'block';
+    });
+});
+
+// schedule data
+const scheduleData = [
+    { day: 'Tuesday', neighborhoods: ['Thamel', 'Baneshwor', 'Durbar Marg'], time: '09:00 AM' },
+    { day: 'Friday', neighborhoods: ['Basantapur', 'Patan', 'Kamalpokhari'], time: '08:45 AM' }
+  ];
+  
+  function loadSchedule() {
+    const grid = document.getElementById('schedule-grid');
+    grid.innerHTML = ''; // Clear previous content
+  
+    scheduleData.forEach(schedule => {
+      const card = document.createElement('div');
+      card.className = 'schedule-card';
+      card.innerHTML = `
+        <div class="schedule-day">${schedule.day}</div>
+        <div class="schedule-detail"><strong>Neighborhoods:</strong> ${schedule.neighborhoods.join(', ')}</div>
+        <div class="schedule-detail"><strong>Time:</strong> ${schedule.time}</div>
+      `;
+      grid.appendChild(card);
+    });
+  }
+  
+  // Navigation logic: Load the schedule when the corresponding section is activated
+  const navItems = document.querySelectorAll('.sidebar-menu li');
+  navItems.forEach(item => {
+    item.addEventListener('click', function() {
+      // Remove active class from all items and add to clicked one
+      navItems.forEach(i => i.classList.remove('active'));
+      this.classList.add('active');
+  
+      // Hide all content sections
+      const contentSections = document.querySelectorAll('.content-section');
+      contentSections.forEach(section => section.style.display = 'none');
+  
+      // Show the selected section
+      const sectionId = this.getAttribute('data-section') + '-section';
+      const selectedSection = document.getElementById(sectionId);
+      selectedSection.style.display = 'block';
+  
+      // Load schedule data if the schedule section is shown
+      if (sectionId === 'schedule-section') {
+        loadSchedule();
+      }
+    });
+  });
+  
+  
