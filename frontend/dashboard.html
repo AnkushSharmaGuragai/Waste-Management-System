@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Waste Management Dashboard</title>
+    <link rel="stylesheet" href="index.css">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+</head>
+<body>
+    <!-- User Dashboard -->
+    <div class="dashboard-container">
+        <div class="sidebar">
+            <div class="sidebar-header">
+                <i class='bx bxs-trash'></i>
+                <span>Waste Management</span>
+            </div>
+            <ul class="sidebar-menu">
+                <li class="active" data-section="home"><i class='bx bx-home'></i> Home</li>
+                <li data-section="schedule"><i class='bx bx-calendar'></i> Waste Schedule</li>
+                <li data-section="disposal"><i class='bx bx-trash'></i> Request Disposal</li>
+                <li data-section="payment"><i class='bx bx-credit-card'></i> Payment</li>
+                <li data-section="route"><i class='bx bx-map'></i> Change Route</li>
+            </ul>
+        </div>
+
+        <div class="main-content">
+            <div class="top-bar">
+                <div class="profile">
+                    <img src="https://via.placeholder.com/40" alt="Profile" class="profile-img">
+                    <span class="profile-name">User Name</span>
+                    <i class='bx bx-chevron-down'></i>
+                </div>
+            </div>
+
+            <div class="content-section" id="home-section">
+                <h2>Welcome to Your Dashboard</h2>
+                <p>Here you can manage your waste collection services.</p>
+                <!-- Home content goes here -->
+            </div>
+
+            <div class="content-section" id="schedule-section" style="display: none;">
+                <h2>Waste Collection Schedule</h2>
+                <!-- Schedule content goes here -->
+                <div class="schedule-grid" id="schedule-grid">
+                    <!-- Schedule cards will be inserted here -->
+                </div>   
+            </div>
+
+            <div class="content-section" id="disposal-section" style="display: none;">
+                <h2>Request Waste Disposal</h2>
+                <!-- Disposal request form goes here -->
+            </div>
+
+            <div class="content-section" id="payment-section" style="display: none;">
+                <h2>Payment History</h2>
+                <!-- Payment content goes here -->
+            </div>
+
+            <div class="content-section" id="route-section" style="display: none;">
+                <h2>Change Collection Route</h2>
+                <!-- Route change form goes here -->
+            </div>
+        </div>
+    </div>
+
+    <script src="dashboard.js"></script>
+</body>
+</html>
