@@ -1,0 +1,164 @@
+/* ========== General Styles ========== */
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background: #f4f4f4; /* Light gray background for the entire page */
+}
+
+/* ========== Header and Navigation ========== */
+.header {
+  background: #08CC7B; /* Green header background */
+  padding: 15px 0;
+  text-align: center;
+}
+
+.navbar a {
+  color: #fff; /* White text */
+  text-decoration: none;
+  padding: 10px 20px;
+  display: inline-block;
+  transition: all 0.3s ease;
+}
+
+.navbar a:hover {
+  background: #058751; /* Darker green on hover */
+  border-radius: 5px;
+  box-shadow: 0 0 10px #08cc7b; /* Glow effect */
+  transform: translateY(-2px); /* Slight upward lift */
+}
+
+/* Tooltip Styling for Nav Links */
+.navbar a::after {
+  content: attr(data-tooltip); /* Use the value from data-tooltip attribute */
+  white-space: pre-line; /* Allows line breaks */
+  position: absolute;
+  bottom: -55px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: rgba(8, 204, 123, 0.9); /* Green tooltip background */
+  color: white;
+  padding: 8px 12px;
+  border-radius: 5px;
+  font-size: 12px;
+  opacity: 0; /* Hidden by default */
+  pointer-events: none;
+  transition: opacity 0.3s ease, bottom 0.3s ease;
+  min-width: max-content;
+  text-align: center;
+}
+
+.navbar a:hover::after {
+  opacity: 1; /* Show tooltip on hover */
+  bottom: -65px; /* Move tooltip slightly down */
+}
+
+/* ========== Background Image Styling ========== */
+.background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: url('background.jpg') no-repeat center center/cover;
+  opacity: 0.6; /* Slightly transparent */
+  z-index: -1; /* Behind other content */
+}
+
+/* ========== Layout Container ========== */
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh; /* Full screen height */
+}
+
+.item {
+  text-align: center;
+  padding: 20px;
+  color: #2c3e50; /* Dark gray text */
+}
+
+/* ========== Login Section Styling ========== */
+.login-section {
+  background: rgba(255, 255, 255, 0.6); /* Semi-transparent white */
+  backdrop-filter: blur(5px); /* Blurred glass effect */
+  padding: 40px;
+  border-radius: 10px;
+  box-shadow: 0px 0px 10px rgba(0,0,0,0.1); /* Light shadow */
+  width: 400px;
+  max-width: 90%;
+}
+
+/* Hide Register, OTP, and Forgot Password forms by default */
+.form-box.register,
+.form-box.otp,
+.form-box.forgot-password {
+  display: none;
+}
+
+/* ========== Input Box Styling ========== */
+.input-box {
+  position: relative;
+  margin-bottom: 20px;
+}
+
+.input-box input {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+/* ========== Button Styling ========== */
+.btn {
+  width: 100%;
+  background: #08CC7B; /* Green background */
+  color: white;
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.btn:hover {
+  background: #058751; /* Darker green on hover */
+}
+
+/* ========== OTP Input Field Styling ========== */
+#otp-input {
+  text-align: center;
+  font-size: 18px;
+  letter-spacing: 5px; /* Spaced digits for OTP */
+}
+
+/* ========== Resend OTP Styling ========== */
+.resend-otp {
+  margin-top: 10px;
+  font-size: 14px;
+}
+
+.resend-otp a {
+  color: #08CC7B;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.resend-otp a:hover {
+  text-decoration: underline;
+}
+
+/* ========== Extra Links (Forgot password / Sign up prompt) ========== */
+.extra-options {
+  text-align: center;
+  margin-top: 10px;
+}
+
+.extra-options a {
+  color: #08CC7B;
+  text-decoration: none;
+}
+
+.extra-options a:hover {
+  text-decoration: underline;
+}
