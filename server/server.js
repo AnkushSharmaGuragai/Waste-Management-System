@@ -1,6 +1,7 @@
 const express = require('express');
 const userRoutes = require('./Routes/User');
 const vehicleRoute = require('./Routes/vehicle')
+const adminRoute=require("./Routes/admin")
 const cors = require('cors');
 require('dotenv').config();
 const cookieParser = require("cookie-parser");
@@ -37,6 +38,7 @@ connectToDatabase();
 app.use(express.json());
 app.use('/api/user/', userRoutes);
 app.use('/api/routes/',vehicleRoute);
+app.use('/api/admin/',adminRoute)
 
 
 const paymentRoutes = require('./Routes/paymentRoutes');
