@@ -50,7 +50,7 @@ const handleLogin = async (req, res) => {
         res.cookie("Authorization", token, {
         httpOnly: true,
         strict:false,
-        domain: '127.0.0.1', // Or '127.0.0.1' if that's what you're using
+        // domain: '127.0.0.1'
         path: '/', // This makes the cookie available to all paths
         maxAge: 3600000 // 1 hour
 });
@@ -66,7 +66,7 @@ const handleLogin = async (req, res) => {
        res.cookie("Authorization", token, {
     httpOnly: true,
     strict:false,
-    domain: '127.0.0.1', // Or '127.0.0.1' if that's what you're using
+    // domain: '127.0.0.1', // Or '127.0.0.1' if that's what you're using
     path: '/', // This makes the cookie available to all paths
     maxAge: 3600000 // 1 hour
 });
