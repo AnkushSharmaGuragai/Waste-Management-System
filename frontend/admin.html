@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Waste Management Admin Dashboard</title>
+    <link rel="stylesheet" href="admin.css">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+</head>
+<body>
+    <!-- Admin Dashboard -->
+    <div class="dashboard-container">
+        <div class="sidebar">
+            <div class="sidebar-header">
+                <i class='bx bxs-trash'></i>
+                <span>Admin Portal</span>
+            </div>
+            <ul class="sidebar-menu">
+                <li class="active" data-section="overview"><i class='bx bx-grid-alt'></i> Overview</li>
+                <li data-section="users"><i class='bx bx-user'></i> User Management</li>
+                <li data-section="routes"><i class='bx bx-map-alt'></i> Collection Routes</li>
+                <li data-section="schedules"><i class='bx bx-calendar'></i> Schedules</li>
+                <li data-section="reports"><i class='bx bx-pie-chart-alt-2'></i> Reports</li>
+                <li data-section="requests"><i class='bx bx-message-detail'></i> Disposal Requests</li>
+                <li data-section="settings"><i class='bx bx-cog'></i> Settings</li>
+            </ul>
+        </div>
+        <div class="main-content">
+            <div class="top-bar">
+                <div class="profile">
+                    <img src="https://via.placeholder.com/40" alt="Admin Profile" class="profile-img">
+                    <span class="profile-name">Admin User</span>
+                    <i class='bx bx-chevron-down'></i>
+                </div>
+            </div>
+
+            <!-- Overview Section (placeholder) -->
+            <div class="content-section" id="overview-section">
+                <h2>Dashboard Overview</h2>
+                <p>Welcome to the Admin Dashboard. Select a section from the sidebar to manage waste collection services.</p>
+            </div>
+
+            <!-- User Management Section -->
+            <div class="content-section" id="users-section" style="display: none;">
+                <h2>User Management</h2>
+                <div class="action-bar">
+                    <button class="action-btn"><i class='bx bx-plus'></i> Add User</button>
+                    <div class="filter-options">
+                        <select>
+                            <option>All Users</option>
+                            <option>Active</option>
+                            <option>Inactive</option>
+                            <option>Pending</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="table-container">
+                    <table class="data-table">
+                        <thead>
+                            <tr>
+                                <th>ID</th>
+                                <th>Name</th>
+                                <th>Email</th>
+                                <th>Address</th>
+                                <th>Status</th>
+                                <th>Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>#1001</td>
+                                <td>John Smith</td>
+                                <td>john@example.com</td>
+                                <td>123 Main St, Cityville</td>
+                                <td><span class="status active">Active</span></td>
+                                <td class="actions">
+                                    <i class='bx bx-edit'></i>
+                                    <i class='bx bx-trash'></i>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>#1002</td>
+                                <td>Sarah Johnson</td>
+                                <td>sarah@example.com</td>
+                                <td>456 Oak Ave, Townsburg</td>
+                                <td><span class="status active">Active</span></td>
+                                <td class="actions">
+                                    <i class='bx bx-edit'></i>
+                                    <i class='bx bx-trash'></i>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>#1003</td>
+                                <td>Michael Brown</td>
+                                <td>michael@example.com</td>
+                                <td>789 Pine Rd, Villagetown</td>
+                                <td><span class="status inactive">Inactive</span></td>
+                                <td class="actions">
+                                    <i class='bx bx-edit'></i>
+                                    <i class='bx bx-trash'></i>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>#1004</td>
+                                <td>Emma Wilson</td>
+                                <td>emma@example.com</td>
+                                <td>321 Elm St, Hamletville</td>
+                                <td><span class="status pending">Pending</span></td>
+                                <td class="actions">
+                                    <i class='bx bx-edit'></i>
+                                    <i class='bx bx-trash'></i>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>#1005</td>
+                                <td>David Lee</td>
+                                <td>david@example.com</td>
+                                <td>654 Maple Dr, Boroughton</td>
+                                <td><span class="status active">Active</span></td>
+                                <td class="actions">
+                                    <i class='bx bx-edit'></i>
+                                    <i class='bx bx-trash'></i>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="pagination">
+                    <button><i class='bx bx-chevron-left'></i></button>
+                    <button class="active">1</button>
+                    <button>2</button>
+                    <button>3</button>
+                    <button><i class='bx bx-chevron-right'></i></button>
+                </div>
+            </div>
+
+            <!-- Schedules Section -->
+            <div class="content-section" id="schedules-section" style="display: none;">
+                <h2>Collection Schedules</h2>
+                <div class="action-bar">
+                    <button class="action-btn"><i class='bx bx-plus'></i> Add Schedule</button>
+                </div>
+                
+                <div class="upcoming-schedules">
+                    <h3>Upcoming Collections</h3>
+                    <div class="schedule-list">
+                        <div class="schedule-item">
+                            <div class="schedule-date">
+                                <span class="day">22</span>
+                                <span class="month">Apr</span>
+                            </div>
+                            <div class="schedule-details">
+                                <h4>Route #R001 - North District</h4>
+                                <p><i class='bx bx-time'></i> 8:00 AM - 12:00 PM</p>
+                                <p><i class='bx bx-car'></i> Truck #T12 | <i class='bx bx-user'></i> Driver: James Wilson</p>
+                            </div>
+                            <div class="schedule-status">
+                                <span class="status scheduled">Scheduled</span>
+                            </div>
+                            <div class="schedule-actions">
+                                <i class='bx bx-edit'></i>
+                                <i class='bx bx-trash'></i>
+                            </div>
+                        </div>
+                        <div class="schedule-item">
+                            <div class="schedule-date">
+                                <span class="day">23</span>
+                                <span class="month">Apr</span>
+                            </div>
+                            <div class="schedule-details">
+                                <h4>Route #R002 - South District</h4>
+                                <p><i class='bx bx-time'></i> 9:00 AM - 1:00 PM</p>
+                                <p><i class='bx bx-car'></i> Truck #T08 | <i class='bx bx-user'></i> Driver: Robert Garcia</p>
+                            </div>
+                            <div class="schedule-status">
+                                <span class="status scheduled">Scheduled</span>
+                            </div>
+                            <div class="schedule-actions">
+                                <i class='bx bx-edit'></i>
+                                <i class='bx bx-trash'></i>
+                            </div>
+                        </div>
+                        <div class="schedule-item">
+                            <div class="schedule-date">
+                                <span class="day">24</span>
+                                <span class="month">Apr</span>
+                            </div>
+                            <div class="schedule-details">
+                                <h4>Route #R004 - West District</h4>
+                                <p><i class='bx bx-time'></i> 8:30 AM - 12:30 PM</p>
+                                <p><i class='bx bx-car'></i> Truck #T09 | <i class='bx bx-user'></i> Driver: Lisa Chen</p>
+                            </div>
+                            <div class="schedule-status">
+                                <span class="status scheduled">Scheduled</span>
+                            </div>
+                            <div class="schedule-actions">
+                                <i class='bx bx-edit'></i>
+                                <i class='bx bx-trash'></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Placeholder sections for other menu items -->
+            <div class="content-section" id="routes-section" style="display: none;">
+                <h2>Collection Routes</h2>
+                <p>Route management interface will appear here.</p>
+            </div>
+
+            <div class="content-section" id="reports-section" style="display: none;">
+                <h2>Reports & Analytics</h2>
+                <p>Reports and analytics interface will appear here.</p>
+            </div>
+
+            <div class="content-section" id="requests-section" style="display: none;">
+                <h2>Disposal Requests</h2>
+                <p>Disposal requests management interface will appear here.</p>
+            </div>
+
+            <div class="content-section" id="settings-section" style="display: none;">
+                <h2>System Settings</h2>
+                <p>System settings interface will appear here.</p>
+            </div>
+        </div>
+    </div>
+    <script src="admin.js"></script>
+</body>
+</html>
