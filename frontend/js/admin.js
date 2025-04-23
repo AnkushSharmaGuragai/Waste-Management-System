@@ -64,6 +64,7 @@ document.addEventListener('DOMContentLoaded', function() {
         const mapButtons = document.querySelectorAll('.actions .bx-map');
         const routeMapContainer = document.querySelector('.route-map-container');
         const closeMapBtn = document.querySelector('.close-map-btn');
+        let map = null;
         
         // Show route map when map icon is clicked
         if (mapButtons) {
@@ -71,23 +72,60 @@ document.addEventListener('DOMContentLoaded', function() {
                 btn.addEventListener('click', function() {
                     const row = this.closest('tr');
                     const routeName = row.cells[0].textContent;
-                    const district = row.cells[1].textContent;
-                    const driver = row.cells[2].textContent;
-                    const truck = row.cells[3].textContent;
-                    const days = row.cells[4].textContent;
+                    const locations = row.cells[1].textContent;
+                    const schedule = row.cells[2].textContent;
                     
                     // Update the route details in the map view
                     document.getElementById('selected-route-name').textContent = routeName;
-                    document.getElementById('route-district').textContent = district;
-                    document.getElementById('route-driver').textContent = driver;
-                    document.getElementById('route-truck').textContent = truck;
-                    document.getElementById('route-days').textContent = days;
+                    document.getElementById('route-locations').textContent = locations;
+                    
+                    // Parse and display schedule items
+                    const scheduleList = document.getElementById('route-schedule');
+                    scheduleList.innerHTML = ''; // Clear existing schedule items
+                    
+                    // Split by commas and then by parentheses to separate each day/time entry
+                    const scheduleItems = schedule.split(',');
+                    scheduleItems.forEach(item => {
+                        const dayTimeMatch = item.trim().match(/([A-Za-z]+)\s*\((.*?)\)/);
+                        if (dayTimeMatch) {
+                            const day = dayTimeMatch[1];
+                            const time = dayTimeMatch[2];
+                            
+                            const scheduleItem = document.createElement('div');
+                            scheduleItem.className = 'schedule-item';
+                            scheduleItem.innerHTML = `
+                                <div class="schedule-day">${day}</div>
+                                <div class="schedule-time">${time}</div>
+                            `;
+                            scheduleList.appendChild(scheduleItem);
+                        }
+                    });
                     
                     // Show the route map container
                     routeMapContainer.style.display = 'block';
                     
-                    // Hide the table view (optional)
+                    // Hide the table view
                     document.querySelector('.table-container').style.display = 'none';
+                    
+                    // Create locations list
+                    const locationsList = document.querySelector('.locations-list');
+                    locationsList.innerHTML = ''; // Clear existing locations
+                    
+                    const locationsArray = locations.split(',');
+                    locationsArray.forEach((location, index) => {
+                        const locationItem = document.createElement('li');
+                        locationItem.className = 'location-item';
+                        locationItem.innerHTML = `
+                            <span class="location-number">${index + 1}</span>
+                            <p class="location-name">${location.trim()}</p>
+                        `;
+                        locationsList.appendChild(locationItem);
+                    });
+                    
+                    // Initialize map after a slight delay to ensure container is visible
+                    setTimeout(() => {
+                        initializeMap(locationsArray);
+                    }, 100);
                 });
             });
         }
@@ -97,7 +135,83 @@ document.addEventListener('DOMContentLoaded', function() {
             closeMapBtn.addEventListener('click', function() {
                 routeMapContainer.style.display = 'none';
                 document.querySelector('.table-container').style.display = 'block';
+                
+                // Destroy map to prevent issues when re-opening
+                if (map) {
+                    map.remove();
+                    map = null;
+                }
             });
+        }
+        
+        // Function to initialize Leaflet map
+        function initializeMap(locations) {
+            // Destroy existing map if any
+            if (map) {
+                map.remove();
+                map = null;
+            }
+            
+            // Get map container
+            const mapContainer = document.querySelector('.route-map');
+            mapContainer.innerHTML = '<div id="map-element" style="height: 400px; width: 100%;"></div>';
+            
+            // Nepal centered coordinates
+            const nepalCenter = [27.7172, 85.3240]; // Kathmandu as default center
+            
+            // Initialize the map
+            map = L.map('map-element').setView(nepalCenter, 12);
+            
+            // Add OpenStreetMap tile layer
+            L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+                attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+            }).addTo(map);
+            
+            // Location coordinates for common areas in Nepal
+            // These are approximate - you should replace with actual coordinates
+            const locationCoordinates = {
+                'Baneshwor': [27.6980, 85.3421],
+                'Koteshwor': [27.6794, 85.3497],
+                'Boudha': [27.7214, 85.3621],
+                'Thamel': [27.7151, 85.3123],
+                'Patan': [27.6747, 85.3207],
+                'Bhaktapur': [27.6718, 85.4277],
+                'Lalitpur': [27.6588, 85.3247],
+                'Maharajgunj': [27.7396, 85.3468],
+                'Lazimpat': [27.7240, 85.3202],
+                // Add more locations as needed
+            };
+            
+            // Array to store markers for bounds calculation
+            const markers = [];
+            
+            // Create markers for each location
+            locations.forEach((location, index) => {
+                const cleanLocation = location.trim();
+                
+                if (locationCoordinates[cleanLocation]) {
+                    const marker = L.marker(locationCoordinates[cleanLocation])
+                        .addTo(map)
+                        .bindPopup(`<b>Stop ${index + 1}:</b> ${cleanLocation}`);
+                    
+                    markers.push(marker);
+                } else {
+                    console.warn(`No coordinates found for location: "${cleanLocation}"`);
+                }
+            });
+            
+            // Connect locations with a line to show the route
+            if (markers.length > 1) {
+                const routePoints = markers.map(marker => marker.getLatLng());
+                const routeLine = L.polyline(routePoints, {color: '#08CC7B', weight: 5}).addTo(map);
+                
+                // Fit the map to show all markers
+                const bounds = L.latLngBounds(routePoints);
+                map.fitBounds(bounds.pad(0.1)); // Add 10% padding around the bounds
+            } else if (markers.length === 1) {
+                // If only one marker, center on it
+                map.setView(markers[0].getLatLng(), 14);
+            }
         }
         
         // Search functionality for routes
