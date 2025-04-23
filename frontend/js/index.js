@@ -85,7 +85,7 @@ document.addEventListener("DOMContentLoaded", () => {
         document.cookie = "Authorization=Bearer dummy-development-token; path=/; max-age=86400"; // Expires in 1 day
         
         // Redirect to dashboard
-        window.location.href = "dashboard.html";
+        window.location.href = "dashboard/dashboard.html";
         
         // NOTE: Original authentication code is commented out below
         /*

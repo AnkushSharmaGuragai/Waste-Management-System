@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Waste Management Admin Dashboard</title>
+    <link rel="stylesheet" href="../../public/css/admin.css">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+</head>
+<body>
+    <!-- Admin Dashboard -->
+    <div class="dashboard-container">
+        <div class="sidebar">
+            <div class="sidebar-header">
+                <i class='bx bxs-trash'></i>
+                <span>Admin Portal</span>
+            </div>
+            <ul class="sidebar-menu">
+                <li class="active" data-section="overview"><i class='bx bx-grid-alt'></i> Overview</li>
+                <li data-section="users"><i class='bx bx-user'></i> User Management</li>
+                <li data-section="routes"><i class='bx bx-map-alt'></i> Collection Routes</li>
+                <li data-section="schedules"><i class='bx bx-calendar'></i> Schedules</li>
+                <li data-section="reports"><i class='bx bx-pie-chart-alt-2'></i> Reports</li>
+                <li data-section="requests"><i class='bx bx-message-detail'></i> Disposal Requests</li>
+                <li data-section="settings"><i class='bx bx-cog'></i> Settings</li>
+            </ul>
+        </div>
+        <div class="main-content">
+            <div class="top-bar">
+                <div class="profile">
+                    <img src="https://via.placeholder.com/40" alt="Admin Profile" class="profile-img">
+                    <span class="profile-name">Admin User</span>
+                    <i class='bx bx-chevron-down'></i>
+                </div>
+            </div>
+
+            <!-- Content will be loaded here -->
+            <div id="content-container"></div>
+        </div>
+    </div>
+    <script src="../../js/admin.js"></script>
+</body>
+</html>

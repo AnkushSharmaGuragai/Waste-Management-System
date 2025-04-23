@@ -1,0 +1,177 @@
+<!-- Collection Routes Section -->
+<div class="content-section" id="routes-section">
+    <h2>Collection Routes</h2>
+    <div class="action-bar">
+        <button class="action-btn"><i class='bx bx-plus'></i> Add Route</button>
+        <div class="filter-options">
+            <div class="search-container">
+                <input type="text" placeholder="Search routes..." class="search-input">
+                <button class="search-btn"><i class='bx bx-search'></i></button>
+            </div>
+        </div>
+    </div>
+    
+    <div class="table-container">
+        <table class="data-table">
+            <thead>
+                <tr>
+                    <th>Route Name</th>
+                    <th>District/Area</th>
+                    <th>Assigned Driver</th>
+                    <th>Truck ID</th>
+                    <th>Collection Days</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Route #R001</td>
+                    <td>North District</td>
+                    <td>James Wilson</td>
+                    <td>Truck #T12</td>
+                    <td>Monday, Thursday</td>
+                    <td class="actions">
+                        <i class='bx bx-edit'></i>
+                        <i class='bx bx-trash'></i>
+                        <i class='bx bx-map'></i>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Route #R002</td>
+                    <td>South District</td>
+                    <td>Robert Garcia</td>
+                    <td>Truck #T08</td>
+                    <td>Tuesday, Friday</td>
+                    <td class="actions">
+                        <i class='bx bx-edit'></i>
+                        <i class='bx bx-trash'></i>
+                        <i class='bx bx-map'></i>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Route #R003</td>
+                    <td>East District</td>
+                    <td>Maria Rodriguez</td>
+                    <td>Truck #T05</td>
+                    <td>Wednesday, Saturday</td>
+                    <td class="actions">
+                        <i class='bx bx-edit'></i>
+                        <i class='bx bx-trash'></i>
+                        <i class='bx bx-map'></i>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Route #R004</td>
+                    <td>West District</td>
+                    <td>Lisa Chen</td>
+                    <td>Truck #T09</td>
+                    <td>Monday, Thursday</td>
+                    <td class="actions">
+                        <i class='bx bx-edit'></i>
+                        <i class='bx bx-trash'></i>
+                        <i class='bx bx-map'></i>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Route #R005</td>
+                    <td>Central District</td>
+                    <td>Thomas Johnson</td>
+                    <td>Truck #T03</td>
+                    <td>Tuesday, Friday</td>
+                    <td class="actions">
+                        <i class='bx bx-edit'></i>
+                        <i class='bx bx-trash'></i>
+                        <i class='bx bx-map'></i>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <!-- Route Map View Section -->
+    <div class="route-map-container" style="display: none;">
+        <div class="route-map-header">
+            <h3>Route Map: <span id="selected-route-name">Route #R001</span></h3>
+            <button class="close-map-btn"><i class='bx bx-x'></i></button>
+        </div>
+        <div class="route-details-panel">
+            <div class="route-detail-item">
+                <span class="detail-label">District:</span>
+                <span class="detail-value" id="route-district">North District</span>
+            </div>
+            <div class="route-detail-item">
+                <span class="detail-label">Driver:</span>
+                <span class="detail-value" id="route-driver">James Wilson</span>
+            </div>
+            <div class="route-detail-item">
+                <span class="detail-label">Truck ID:</span>
+                <span class="detail-value" id="route-truck">Truck #T12</span>
+            </div>
+            <div class="route-detail-item">
+                <span class="detail-label">Collection Days:</span>
+                <span class="detail-value" id="route-days">Monday, Thursday</span>
+            </div>
+            <div class="route-detail-item">
+                <span class="detail-label">Estimated Time:</span>
+                <span class="detail-value" id="route-time">4 hours</span>
+            </div>
+            <div class="route-detail-item">
+                <span class="detail-label">Total Stops:</span>
+                <span class="detail-value" id="route-stops">48</span>
+            </div>
+        </div>
+        <div class="route-map">
+            <!-- Placeholder for map -->
+            <div class="map-placeholder">
+                <i class='bx bx-map-alt'></i>
+                <p>Interactive route map would appear here</p>
+                <p class="map-note">The actual implementation would require integration with a mapping service like Google Maps or Leaflet.js</p>
+            </div>
+        </div>
+        <div class="route-stop-list">
+            <h4>Collection Stops</h4>
+            <ul class="stops-list">
+                <li class="stop-item">
+                    <span class="stop-number">1</span>
+                    <div class="stop-details">
+                        <p class="stop-address">123 Maple Street</p>
+                        <p class="stop-note">Large apartment complex</p>
+                    </div>
+                    <span class="stop-time">8:00 AM</span>
+                </li>
+                <li class="stop-item">
+                    <span class="stop-number">2</span>
+                    <div class="stop-details">
+                        <p class="stop-address">456 Oak Avenue</p>
+                        <p class="stop-note">Commercial building</p>
+                    </div>
+                    <span class="stop-time">8:15 AM</span>
+                </li>
+                <li class="stop-item">
+                    <span class="stop-number">3</span>
+                    <div class="stop-details">
+                        <p class="stop-address">789 Pine Road</p>
+                        <p class="stop-note">Residential area</p>
+                    </div>
+                    <span class="stop-time">8:30 AM</span>
+                </li>
+                <li class="stop-item">
+                    <span class="stop-number">4</span>
+                    <div class="stop-details">
+                        <p class="stop-address">101 Cedar Lane</p>
+                        <p class="stop-note">School zone - approach from east</p>
+                    </div>
+                    <span class="stop-time">8:45 AM</span>
+                </li>
+                <li class="stop-item">
+                    <span class="stop-number">5</span>
+                    <div class="stop-details">
+                        <p class="stop-address">202 Birch Blvd</p>
+                        <p class="stop-note">Multiple containers</p>
+                    </div>
+                    <span class="stop-time">9:00 AM</span>
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>
