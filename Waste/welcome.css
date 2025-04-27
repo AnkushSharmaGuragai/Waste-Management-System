@@ -1,0 +1,97 @@
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Arial', sans-serif;
+}
+
+body {
+    background: linear-gradient(135deg, #1b5e20, #388e3c);
+    background: url("pic2.jpg") center/cover no-repeat fixed;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.container {
+    text-align: center;
+    max-width: 800px;
+    padding: 20px;
+    color: #1b5e20; 
+}
+
+h1 {
+    color: #1b5e20;
+    font-size: 3em;
+    margin-bottom: 20px;
+    text-shadow: 2px 2px 4px rgba(255,255,255,0.2); 
+}
+
+h2 {
+    color: #1b5e20; 
+    margin: 20px 0;
+}
+
+h2 span {
+    color: #1b5e20; 
+}
+
+p {
+    color: #1b5e20; 
+    font-size: 1.2em;
+    margin-bottom: 40px;
+    opacity: 0.9;
+}
+
+.subheading {
+    color: #1b5e20; 
+    margin-top: 40px;
+    font-size: 1.1em;
+    opacity: 0.8;
+}
+
+p {
+    font-size: 1.2em;
+    margin-bottom: 40px;
+    opacity: 0.9;
+}
+
+.button-container {
+    margin-top: 30px;
+}
+
+.btn {
+    padding: 15px 40px;
+    border: none;
+    border-radius: 30px;
+    font-size: 1.1em;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    min-width: 200px;
+    background: #c8e6c9;
+    color: #1b5e20;
+    border: 2px solid #c8e6c9;
+}
+
+.btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+}
+
+.subheading {
+    margin-top: 40px;
+    font-size: 1.1em;
+    opacity: 0.8;
+}
+
+@media (max-width: 768px) {
+    h1 {
+        font-size: 2em;
+    }
+    
+    .btn {
+        width: 100%;
+    }
+}

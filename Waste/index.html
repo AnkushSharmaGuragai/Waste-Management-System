@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Waste Management Onboarding</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<style>
+    body {
+  margin: 0;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #ffffff;
+}
+
+.onboarding-container {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+}
+
+.header-wave {
+  background: linear-gradient(to right, #006400, #70b570);
+  height: 80px;
+  border-bottom-left-radius: 50% 40%;
+  border-bottom-right-radius: 50% 40%;
+}
+
+.content {
+  display: flex;
+  flex: 1;
+  align-items: center;
+  justify-content: space-around;
+  padding: 30px;
+}
+
+.text-section {
+  max-width: 400px;
+}
+
+.text-section h1 {
+  font-size: 3rem;
+  color: #000;
+  margin-bottom: 10px;
+}
+
+.text-section p {
+  font-size: 1rem;
+  color: #444;
+  margin-bottom: 30px;
+}
+
+.progress-bar {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 30px;
+}
+
+.dot {
+  width: 30px;
+  height: 6px;
+  background-color: #ccc;
+  border-radius: 5px;
+}
+
+.dot.active {
+  background-color: #007a33;
+}
+
+.button-group {
+  display: flex;
+  gap: 20px;
+}
+
+.btn {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 6px;
+  font-size: 1rem;
+  cursor: pointer;
+}
+
+.skip {
+  background-color: #f0f0f0;
+  color: #333;
+}
+
+.next {
+  background-color: #007a33;
+  color: white;
+}
+
+.image-section img {
+  max-width: 400px;
+  height: auto;
+}
+
+</style>
+<body>
+  <div class="onboarding-container">
+    <div class="header-wave"></div>
+    <div class="content">
+      <div class="text-section">
+        <h1>Welcome!</h1>
+        <p>Let's make your city cleaner and greener together.</p>
+        <div class="progress-bar">
+          <div class="dot active"></div>
+          <div class="dot"></div>
+          <div class="dot"></div>
+        </div>
+        <div class="button-group">
+          <button class="btn skip">Skip</button>
+          <button class="btn next" onclick="goNext()">Next</button>
+        </div>
+      </div>
+     
+      <div class="image-section">
+        <img src="waste1.png" alt="Recycling Image" />
+      </div>
+      <div class="image-section">
+        <img src="solid.png" alt="Recycling Image" />
+        </div>
+      </div class="image-section">
+      <img src="waste.png" alt="Community Engagement Image" />
+      </div>
+    </div>
+  </div>
+  <script src="index.js"></script>
+</body>
+</html>

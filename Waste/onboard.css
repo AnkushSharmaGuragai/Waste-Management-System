@@ -1,0 +1,85 @@
+
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: #fff;
+    }
+
+    .header-wave {
+      background: linear-gradient(to right, #006400, #70b570);
+      height: 100px;
+      border-bottom-left-radius: 50% 40%;
+      border-bottom-right-radius: 50% 40%;
+    }
+
+    .onboarding-container {
+      display: flex;
+      align-items: center;
+      justify-content: space-around;
+      padding: 40px 60px;
+    }
+
+    .left-section {
+      max-width: 450px;
+    }
+
+    .left-section h1 {
+      font-size: 3rem;
+      color: #000;
+      margin-bottom: 10px;
+    }
+
+    .left-section .bold {
+      font-weight: 700;
+    }
+
+    .left-section p {
+      font-size: 0.95rem;
+      color: #000;
+      margin-bottom: 25px;
+    }
+
+    .progress-bar {
+      display: flex;
+      gap: 10px;
+      margin-bottom: 25px;
+    }
+
+    .dot {
+      width: 40px;
+      height: 5px;
+      background-color: #ccc;
+      border-radius: 3px;
+    }
+
+    .dot.active {
+      background-color: #007a33;
+    }
+
+    .button-group {
+      display: flex;
+      gap: 20px;
+    }
+
+    .btn {
+      padding: 10px 20px;
+      font-size: 1rem;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+    }
+
+    .skip {
+      background-color: #f0f0f0;
+      color: #333;
+    }
+
+    .next {
+      background-color: #007a33;
+      color: white;
+    }
+
+    .right-section img {
+      max-width: 400px;
+      height: auto;
+    }
