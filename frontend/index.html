@@ -2,17 +2,20 @@
 <html lang="en">
 <head>
     <title>Waste Management System</title>
-    <link rel="stylesheet" href="../public/css/index.css">
+    <link rel="stylesheet" href="index.css">
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
 </head>
 <body>
    <header class="header">
     <nav class="navbar">
-        <a href="#">Contact</a>
-        <a href="#">Mission & Vision</a>
-        <a href="#">Recycling Info</a>
-        <a href="#">About us</a>
-    </nav>
+        <a href="contact.html">Contact</a>
+        <a href="mission.html">Mission & Vision</a>
+        <a href="recycling.html">Recycling Info</a>
+        <a href="about.html">About Us</a>
+        <!-- <a href="#" data-tooltip="👥 Meet the team behind the project\n🌍 Working towards a sustainable future">About us</a> -->
+      </nav>
+      
+    
    </header>
     <div class="background"></div>
     <div class="container">
@@ -52,18 +55,28 @@
                     <h2>Sign Up</h2>
                     <div class="input-box">
                         <span class="icon"><i class='bx bxs-user'></i></span>
-                        <input type="text" required>
+                        <input type="text" name="full-name" required>
                         <label>Full Name</label>
                     </div>
                     <div class="input-box">
                         <span class="icon"><i class='bx bxs-envelope'></i></span>
-                        <input type="email" required>
+                        <input type="email" name="email" required>
                         <label>Email</label>
                     </div>
                     <div class="input-box">
+                        <span class="icon"><i class='bx bxs-envelope'></i></span>
+                        <input type="number" name="number" required>
+                        <label>Contact Number</label>
+                    </div>
+                    <div class="input-box">
                         <span class="icon"><i class='bx bxs-lock-alt'></i></span>
-                        <input type="password" required>
+                        <input type="password" name="confirmPassword" required>
                         <label>Password</label>
+                    </div>
+                    <div class="input-box">
+                        <span class="icon"><i class='bx bxs-lock-alt'></i></span>
+                        <input type="password" name="password" required>
+                        <label>Confirm Password</label>
                     </div>
                     <button class="btn sign-up-btn">Sign Up</button>
                     <p>Already have an account? <a href="#" class="login-link">Log In</a></p>
@@ -79,6 +92,11 @@
                         <span class="icon"><i class='bx bxs-envelope'></i></span>
                         <input type="email" required>
                         <label>Email</label>
+                    </div>
+                    <div class="input-box">
+                        <span class="icon"><i class='bx bxs-lock-alt'></i></span>
+                        <input type="password" required placeholder="Enter New Password">
+                        <label>New Password</label>
                     </div>
                     <button class="btn send-reset-link">Send Reset Link</button>
                     <p><a href="#" class="back-to-login">Back to Login</a></p>
@@ -101,38 +119,7 @@
             </div>
         </div>
     </div>
-
-    <!-- Footer Section -->
-    <footer class="footer">
-        <div class="footer-content">
-            <div class="footer-section about">
-                <h3><i class='bx bxs-trash'></i> Waste Management System</h3>
-                <p>Working towards a cleaner environment and sustainable waste management practices in Nepal.</p>
-                <div class="contact">
-                    <span><i class='bx bxs-phone'></i> +977 01-4567890</span>
-                    <span><i class='bx bxs-envelope'></i> info@wastenepal.com</span>
-                </div>
-                <div class="socials">
-                    <a href="#"><i class='bx bxl-facebook'></i></a>
-                    <a href="#"><i class='bx bxl-twitter'></i></a>
-                    <a href="#"><i class='bx bxl-instagram'></i></a>
-                    <a href="#"><i class='bx bxl-linkedin'></i></a>
-                </div>
-            </div>
-            <div class="footer-section contact-form">
-                <h3>Contact Us</h3>
-                <form action="#">
-                    <input type="email" placeholder="Enter your email" required>
-                    <textarea placeholder="Your message"></textarea>
-                    <button type="submit" class="btn-send">Send</button>
-                </form>
-            </div>
-        </div>
-        <div class="footer-bottom">
-            <p>&copy; 2025 Waste Management System | All rights reserved</p>
-        </div>
-    </footer>
-
-    <script src="../js/index.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script src="index.js"></script>
 </body>
-</html>
+</html> 
