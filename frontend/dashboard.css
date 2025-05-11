@@ -111,50 +111,6 @@
     transition: transform 0.3s;
 }
 
-.profile-dropdown.active .profile-trigger i {
-    transform: rotate(180deg);
-}
-
-.dropdown-content {
-    display: none;
-    position: absolute;
-    right: 0;
-    top: 100%;
-    background-color: white;
-    min-width: 250px;
-    box-shadow: 0 8px 16px rgba(0,0,0,0.1);
-    border-radius: 5px;
-    z-index: 1;
-    padding: 10px 0;
-    margin-top: 5px;
-}
-
-.profile-dropdown.active .dropdown-content {
-    display: block;
-}
-
-.dropdown-item {
-    padding: 10px 15px;
-    font-size: 14px;
-    color: #333;
-    cursor: pointer;
-    transition: background-color 0.2s;
-}
-
-.dropdown-item:hover {
-    background-color: #f5f5f5;
-}
-
-.dropdown-item i {
-    margin-right: 8px;
-    font-size: 16px;
-}
-
-.dropdown-divider {
-    height: 1px;
-    background-color: #eee;
-    margin: 5px 0;
-}
 
 .content-section {
     padding: 20px;
@@ -447,4 +403,137 @@ body {
 .esewa-btn img {
     height: 24px;
     width: auto;
+}
+
+/* Add these styles to your existing CSS file */
+
+/* Hamburger Menu Styles */
+.hamburger-menu {
+    position: relative;
+    display: inline-block;
+}
+
+.hamburger-icon {
+    cursor: pointer;
+    padding: 10px;
+    background: #08CC7B;
+    border-radius: 5px;
+    color: white;
+    transition: background-color 0.3s;
+}
+
+.hamburger-icon i {
+    font-size: 28px;
+}
+
+.hamburger-icon:hover {
+    background-color: #06b469;
+}
+
+.menu-dropdown {
+    display: none;
+    position: absolute;
+    right: 0;
+    top: 100%;
+    background-color: white;
+    min-width: 200px;
+    box-shadow: 0 8px 16px rgba(0,0,0,0.1);
+    border-radius: 5px;
+    z-index: 1000;
+    padding: 5px 0;
+    margin-top: 5px;
+}
+
+.hamburger-menu.active .menu-dropdown {
+    display: block;
+}
+
+.menu-item {
+    padding: 12px 15px;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+.menu-item:hover {
+    background-color: #f5f5f5;
+}
+
+.menu-item i {
+    margin-right: 10px;
+    font-size: 18px;
+    color: #08CC7B;
+}
+
+/* Profile Info Panel Styles */
+.profile-info-panel {
+    display: none;
+    position: fixed;
+    top: 70px;
+    right: 20px;
+    width: 300px;
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+    z-index: 1001;
+    overflow: hidden;
+}
+
+.profile-info-panel.active {
+    display: block;
+}
+
+.profile-panel-header {
+    background: #08CC7B;
+    color: white;
+    padding: 12px 15px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.profile-panel-header h3 {
+    margin: 0;
+    font-size: 16px;
+}
+
+.close-panel {
+    font-size: 22px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.profile-panel-content {
+    padding: 15px;
+}
+
+.profile-pic-container {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 15px;
+}
+
+.panel-profile-img {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    border: 3px solid #08CC7B;
+    object-fit: cover;
+}
+
+.profile-details {
+    background-color: #f9f9f9;
+    border-radius: 6px;
+    padding: 12px;
+}
+
+.detail-item {
+    padding: 8px 0;
+    border-bottom: 1px solid #eee;
+    font-size: 14px;
+}
+
+.detail-item:last-child {
+    border-bottom: none;
 }

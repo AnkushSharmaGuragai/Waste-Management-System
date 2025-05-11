@@ -23,18 +23,35 @@
 
         <div class="main-content">
             <div class="top-bar">
-                <div class="profile-dropdown">
-                    <div class="profile-trigger">
-                        <img src="User.png" alt="User Profile" class="profile-img">
-                        <div class="profile-name" id="greet">Welcome, User</div>
-                        <i class='bx bx-chevron-down'></i>
+                <div class="hamburger-menu" id="hamburger-menu">
+                    <div class="hamburger-icon">
+                        <i class='bx bx-menu'></i>
                     </div>
-                    <div class="dropdown-content">
-                        <div class="dropdown-item"><strong>Username:</strong> <span id="dropdown-username">Sandesh Thapa</span></div>
-                        <div class="dropdown-item"><strong>Email:</strong> <span id="dropdown-email">thapasandesh996@gmail.com</span></div>
-                        <div class="dropdown-item"><strong>Route:</strong> <span id="dropdown-route">Budanilkantha-Naxal-Chabhil</span></div>
-                        <div class="dropdown-divider"></div>
-                        <div class="dropdown-item" id="dropdown-change-password"><i class='bx bx-key'></i> Change Password</div>
+                    <div class="menu-dropdown">
+                        <div class="menu-item" id="profile-option">
+                            <i class='bx bx-user'></i> Profile
+                        </div>
+                        <div class="menu-item" id="change-password-option">
+                            <i class='bx bx-key'></i> Change Password
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Add this profile info panel div separately -->
+            <div class="profile-info-panel" id="profile-info-panel">
+                <div class="profile-panel-header">
+                    <span class="close-panel">&times;</span>
+                    <h3>User Profile</h3>
+                </div>
+                <div class="profile-panel-content">
+                    <div class="profile-pic-container">
+                        <img src="User.png" alt="User Profile" class="panel-profile-img">
+                    </div>
+                    <div class="profile-details">
+                        <div class="detail-item"><strong>Username:</strong> <span id="panel-username">Sandesh Thapa</span></div>
+                        <div class="detail-item"><strong>Email:</strong> <span id="panel-email">thapasandesh996@gmail.com</span></div>
+                        <div class="detail-item"><strong>Route:</strong> <span id="panel-route">Budanilkantha-Naxal-Chabhil</span></div>
                     </div>
                 </div>
             </div>

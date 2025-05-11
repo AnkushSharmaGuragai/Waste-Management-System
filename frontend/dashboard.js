@@ -335,3 +335,59 @@ function showError(message) {
     init();
     loadRoutes();
 });
+
+document.addEventListener('DOMContentLoaded', function() {
+    // Get the hamburger menu elements
+    const hamburgerMenu = document.getElementById('hamburger-menu');
+    const profileOption = document.getElementById('profile-option');
+    const changePasswordOption = document.getElementById('change-password-option');
+    const profileInfoPanel = document.getElementById('profile-info-panel');
+    const closePanel = document.querySelector('.close-panel');
+    
+    // Toggle the menu when clicking on the hamburger icon
+    hamburgerMenu.querySelector('.hamburger-icon').addEventListener('click', function(event) {
+        hamburgerMenu.classList.toggle('active');
+        // Close profile panel if menu is toggled
+        profileInfoPanel.classList.remove('active');
+        event.stopPropagation();
+    });
+    
+    // Close the menu when clicking elsewhere on the page
+    document.addEventListener('click', function(event) {
+        if (!hamburgerMenu.contains(event.target) && !profileInfoPanel.contains(event.target)) {
+            hamburgerMenu.classList.remove('active');
+        }
+    });
+    
+    // Open the profile panel when clicking on the profile option
+    profileOption.addEventListener('click', function() {
+        profileInfoPanel.classList.add('active');
+        hamburgerMenu.classList.remove('active');
+        
+        // Update profile details if needed
+        document.getElementById('panel-username').textContent = 'Sandesh Thapa';
+        document.getElementById('panel-email').textContent = 'thapasandesh996@gmail.com';
+        document.getElementById('panel-route').textContent = 'Budanilkantha-Naxal-Chabhil';
+    });
+    
+    // Handle change password option
+    changePasswordOption.addEventListener('click', function() {
+        // You can add change password functionality here in the future
+        hamburgerMenu.classList.remove('active');
+        
+        // For now, just show an alert
+        alert('Change password functionality will be added in the future.');
+    });
+    
+    // Close the profile panel when clicking on the close button
+    closePanel.addEventListener('click', function() {
+        profileInfoPanel.classList.remove('active');
+    });
+    
+    // Close the profile panel when clicking outside of it
+    document.addEventListener('click', function(event) {
+        if (!profileInfoPanel.contains(event.target) && !hamburgerMenu.contains(event.target)) {
+            profileInfoPanel.classList.remove('active');
+        }
+    });
+});
