@@ -11,6 +11,8 @@ body {
     background: #08CC7B;
     padding: 15px 0;
     text-align: center;
+    position: relative;
+    z-index: 10;
   }
   
   .navbar a {
@@ -43,6 +45,9 @@ body {
     justify-content: center;
     align-items: center;
     height: 100vh;
+    min-height: calc(100vh-63px); /*subtract header height*/
+    padding-top: 50px; /*added padding to prevent overlap with header*/
+    padding-bottom: 80px;
   }
   
   .item {
